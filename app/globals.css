@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F7F5F0;
+  --foreground: #151515;
+  --accent: #A62B24;
+  --accent-dark: #7E211D;
+  --card: #FFFFFF;
+  --border: #DDD9D0;
+  --muted: #66645F;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+  --font-serif: "DM Serif Display", Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Editorial notebook grid background */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(221, 217, 208, 0.55) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(221, 217, 208, 0.55) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Utility: uppercase tracked eyebrow label */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Fade / slide reveal animation, respecting reduced motion */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: fadeUp 0.6s ease both;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}

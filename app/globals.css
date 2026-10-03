@@ -1,3 +1,4 @@
+
 @import "tailwindcss";
 
 :root {
@@ -24,6 +25,10 @@
   --font-serif: "DM Serif Display", Georgia, serif;
 }
 
+/* =========================================================
+   BASE
+   ========================================================= */
+
 html {
   scroll-behavior: smooth;
 }
@@ -34,27 +39,54 @@ body {
   font-family: var(--font-sans);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+/* =========================================================
+   MARQUEE
+   Continuous right-to-left scrolling
+   ========================================================= */
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
   }
-  *, *::before, *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
+
+  to {
+    transform: translateX(-50%);
   }
 }
 
-/* Editorial notebook grid background */
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* =========================================================
+   EDITORIAL NOTEBOOK GRID
+   ========================================================= */
+
 .grid-bg {
   background-image:
-    linear-gradient(to right, rgba(221, 217, 208, 0.55) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(221, 217, 208, 0.55) 1px, transparent 1px);
+    linear-gradient(
+      to right,
+      rgba(221, 217, 208, 0.55) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(221, 217, 208, 0.55) 1px,
+      transparent 1px
+    );
+
   background-size: 40px 40px;
 }
 
-/* Utility: uppercase tracked eyebrow label */
+/* =========================================================
+   EYEBROW LABEL
+   ========================================================= */
+
 .eyebrow {
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -63,7 +95,10 @@ body {
   color: var(--accent);
 }
 
-/* Focus visibility */
+/* =========================================================
+   FOCUS VISIBILITY
+   ========================================================= */
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -73,12 +108,16 @@ textarea:focus-visible {
   border-radius: 2px;
 }
 
-/* Fade / slide reveal animation, respecting reduced motion */
+/* =========================================================
+   FADE / SLIDE REVEAL
+   ========================================================= */
+
 @keyframes fadeUp {
   from {
     opacity: 0;
     transform: translateY(14px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -89,7 +128,30 @@ textarea:focus-visible {
   animation: fadeUp 0.6s ease both;
 }
 
+/* =========================================================
+   TEXT SELECTION
+   ========================================================= */
+
 ::selection {
   background: var(--accent);
   color: #fff;
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

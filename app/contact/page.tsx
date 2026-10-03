@@ -12,9 +12,9 @@ export default function ContactPage() {
   return (
     <>
       <PageHeader
-        label="~/CONTACT"
+        label="CONTACT"
         title="Let's Connect"
-        subtitle="I'm open to entry-level opportunities in Data Science, Machine Learning, Data Analytics, and related technical roles."
+        subtitle="Open to Data Science, Machine Learning, Data Analytics & Full-Stack Development opportunities."
       />
 
       <section>

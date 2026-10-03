@@ -10,6 +10,9 @@ export default function Footer() {
             <p className="font-semibold tracking-tight">{site.name}</p>
             <p className="eyebrow mt-1">Data Science &amp; Machine Learning</p>
             <p className="text-sm text-muted mt-2">Python • SQL • Machine Learning</p>
+            <p className="text-sm text-muted mt-2 max-w-xs">
+              Full-Stack Web Developer specializing in React, Next.js &amp; Node.js
+            </p>
           </div>
 
           <div className="grid grid-cols-2 gap-x-10 gap-y-6 sm:flex sm:gap-14">

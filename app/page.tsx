@@ -3,6 +3,7 @@ import HeroVisual from "@/components/HeroVisual";
 import ProjectCard from "@/components/ProjectCard";
 import CTASection from "@/components/CTASection";
 import { capabilities, experience, education, projects, site, workflow } from "@/lib/data";
+import CapabilitiesMarquee from "@/components/CapabilitiesMarquee";
 
 export default function Home() {
   const featured = projects.filter((p) => p.featured).concat(
@@ -15,25 +16,27 @@ export default function Home() {
       <section className="grid-bg border-b border-border">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8 py-14 sm:py-20 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-[70vh]">
           <div className="reveal">
-            <p className="eyebrow mb-4">~/DATA-SCIENCE</p>
+            <p className="eyebrow mb-4">~/DATA-SCIENCE + FULL-STACK</p>
             <p className="font-mono text-xs text-muted mb-6 tracking-wide">
-              DATA SCIENCE • MACHINE LEARNING • PYTHON • SQL
+              DATA SCIENCE • MACHINE LEARNING • PYTHON • SQL • NEXT.JS • NODE.JS
             </p>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05]">
               Data Science
               <br />
-              &amp; Machine Learning
+              & Full-Stack Developer
             </h1>
             <p className="mt-5 text-lg text-foreground/80">
-              Turning Data Into Intelligent Solutions.
+              Building Intelligent Solutions with Data, AI & Full-Stack Development.
             </p>
-            <p className="mt-5 max-w-lg text-muted leading-relaxed text-[15px]">
-              Entry-level Data Science and Machine Learning candidate with hands-on
-              experience building machine learning workflows using Python, Pandas,
-              NumPy, and Scikit-learn. Focused on data preprocessing, exploratory
-              analysis, feature engineering, model training, evaluation, and
-              visualization.
+            <p className="mt-5 max-w-2xl text-muted leading-relaxed text-[15px]">
+              I build data-driven solutions and modern web applications using Data
+              Science, Machine Learning, and Full-Stack technologies. I work with
+              Python, Pandas, NumPy, Scikit-learn, React, Next.js, TypeScript, Node.js,
+              Express, MongoDB, and REST APIs. I enjoy turning data and ideas into
+              useful, real-world applications.
             </p>
+
+
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
@@ -60,7 +63,7 @@ export default function Home() {
 
             <div className="mt-8 inline-flex items-center gap-2 font-mono text-[11px] text-muted">
               <span className="w-2 h-2 rounded-full bg-accent" aria-hidden="true" />
-              OPEN TO ENTRY-LEVEL OPPORTUNITIES
+              OPEN TO DATA SCIENCE & FULL-STACK OPPORTUNITIES
             </div>
           </div>
 
@@ -69,7 +72,7 @@ export default function Home() {
       </section>
 
       {/* CORE CAPABILITIES */}
-      <section className="border-b border-border">
+      {/* <section className="border-b border-border">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8 py-8 flex flex-wrap items-center gap-x-8 gap-y-3 justify-center sm:justify-between">
           {capabilities.map((c, i) => (
             <span key={c} className="flex items-center gap-8">
@@ -84,10 +87,11 @@ export default function Home() {
             </span>
           ))}
         </div>
-      </section>
+      </section> */}
+      <CapabilitiesMarquee />
 
       {/* ABOUT PREVIEW */}
-      <section className="border-b border-border">
+      {/* <section className="border-b border-border">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8 py-16 sm:py-24 grid lg:grid-cols-[1fr_1.4fr] gap-10">
           <div>
             <p className="eyebrow mb-4">~/ABOUT</p>
@@ -110,7 +114,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* SELECTED WORK */}
       <section className="border-b border-border">
@@ -159,36 +163,94 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* EXPERIENCE + EDUCATION PREVIEW */}
       <section className="border-b border-border">
-        <div className="mx-auto max-w-[1280px] px-5 sm:px-8 py-16 sm:py-24 grid md:grid-cols-2 gap-6">
-          <div className="border border-border rounded-[8px] p-8 bg-card">
-            <p className="eyebrow mb-4">~/EXPERIENCE</p>
-            <h3 className="text-xl font-semibold tracking-tight">{experience[0].title}</h3>
-            <p className="text-muted mt-1 text-sm">
-              {experience[0].company} · {experience[0].period}
-            </p>
-            <Link
-              href="/experience"
-              className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent-dark"
-            >
-              View Experience <span aria-hidden="true">→</span>
-            </Link>
-          </div>
+        <div className="mx-auto max-w-[1280px] px-5 sm:px-8 py-16 sm:py-24">
+          <div className="grid md:grid-cols-3 gap-6">
 
-          <div className="border border-border rounded-[8px] p-8 bg-card">
-            <p className="eyebrow mb-4">~/EDUCATION</p>
-            <h3 className="text-xl font-semibold tracking-tight">B.Sc. CSIT</h3>
-            <p className="text-muted mt-1 text-sm">Expected {education.graduation}</p>
-            <Link
-              href="/education"
-              className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent-dark"
-            >
-              View Education <span aria-hidden="true">→</span>
-            </Link>
+            {/* DATA SCIENCE + MACHINE LEARNING */}
+            <div className="border border-border rounded-[8px] p-8 bg-card">
+              <p className="eyebrow mb-4">~/DATA SCIENCE + ML</p>
+
+              <h3 className="text-xl font-semibold tracking-tight">
+                Data Science & Machine Learning
+              </h3>
+
+              <p className="text-muted mt-1 text-sm">
+                Python · Pandas · NumPy · Scikit-learn
+              </p>
+
+              <p className="text-muted mt-4 text-sm leading-6">
+                Hands-on experience building machine learning workflows,
+                including data preprocessing, analysis, feature engineering,
+                model training, and evaluation.
+              </p>
+
+              <Link
+                href="/experience"
+                className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent-dark"
+              >
+                View Experience <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+
+            {/* FULL-STACK DEVELOPMENT */}
+            <div className="border border-border rounded-[8px] p-8 bg-card">
+              <p className="eyebrow mb-4">~/FULL-STACK DEVELOPMENT</p>
+
+              <h3 className="text-xl font-semibold tracking-tight">
+                Full-Stack Developer
+              </h3>
+
+              <p className="text-muted mt-1 text-sm">
+                React · Next.js · Node.js · TypeScript
+              </p>
+
+              <p className="text-muted mt-4 text-sm leading-6">
+                Experience developing responsive web applications with
+                modern frontend and backend technologies, APIs, databases,
+                and production-focused workflows.
+              </p>
+
+              <Link
+                href="/experience"
+                className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent-dark"
+              >
+                View Experience <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+
+            {/* EDUCATION */}
+            <div className="border border-border rounded-[8px] p-8 bg-card">
+              <p className="eyebrow mb-4">~/EDUCATION</p>
+
+              <h3 className="text-xl font-semibold tracking-tight">
+                B.Sc. CSIT
+              </h3>
+
+              <p className="text-muted mt-1 text-sm">
+                Expected {education.graduation}
+              </p>
+
+              <p className="text-muted mt-4 text-sm leading-6">
+                Computer Science and Information Technology with a focus
+                on software development, data science, machine learning,
+                databases, and practical technical projects.
+              </p>
+
+              <Link
+                href="/education"
+                className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent hover:text-accent-dark"
+              >
+                View Education <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+
           </div>
         </div>
       </section>
+
 
       <CTASection />
     </>

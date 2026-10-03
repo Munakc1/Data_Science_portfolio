@@ -72,9 +72,9 @@ export default function Nav() {
         scrolled ? "py-0" : "py-0"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-[1280px] items-center justify-between px-5 sm:px-8">
+      <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-7 sm:px-10 lg:px-12">
         {/* Logo */}
-        <Link href="/" className="flex items-center group">
+        <Link href="/" className="flex items-center group shrink-0">
           <img
             src="/logo (3).png"
             alt={`${site.name} logo`}
@@ -85,14 +85,14 @@ export default function Nav() {
         {/* Desktop nav */}
         <nav
           aria-label="Primary"
-          className="hidden md:flex items-center gap-7"
+          className="hidden md:flex items-center gap-8 lg:gap-10 xl:gap-11 mx-10 lg:mx-16"
         >
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               aria-current={isActive(item.href) ? "page" : undefined}
-              className={`relative text-sm font-medium py-2 transition-colors ${
+              className={`relative text-sm font-medium py-2 whitespace-nowrap transition-colors ${
                 isActive(item.href)
                   ? "text-accent"
                   : "text-foreground/80 hover:text-foreground"
@@ -110,7 +110,7 @@ export default function Nav() {
         </nav>
 
         {/* Desktop right */}
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-5 lg:gap-6 shrink-0">
           {/* GitHub */}
           <a
             href={site.github}
@@ -139,7 +139,7 @@ export default function Nav() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Open resume in a new tab"
-            className="ml-1 text-sm font-medium border border-foreground/80 rounded-[4px] px-4 py-2 hover:bg-foreground hover:text-background transition-colors"
+            className="ml-2 text-sm font-medium border border-foreground/80 rounded-[4px] px-4 py-2 hover:bg-foreground hover:text-background transition-colors"
           >
             Resume
           </a>
